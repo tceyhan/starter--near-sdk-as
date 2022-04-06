@@ -1,17 +1,10 @@
 import { storage, Context } from "near-sdk-as"
 
 // return the string 'hello world'
-
 export function helloWorld(): string {
   const predecessor = Context.predecessor
   return 'hello ' + predecessor
 }
-
-export function helloWorld(names: Array<string>): string {
-  return names.map<string>(name => 'hello ' + name).join(` `)
->>>>>>> d8b9ebd6d3ea6a9a1bf13442fb682c05a94bab83
-}
-
 // read the given key from account (contract) storage
 export function read(key: string): string {
   if (storage.hasKey(key)) {
